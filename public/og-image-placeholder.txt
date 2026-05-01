@@ -1,0 +1,12 @@
+TODO: Add og-image.png to this directory.
+Dimensions: 1200 × 630 pixels
+Format: PNG (recommended) or JPG
+Content: Hero visual with headline, brand logo, and product imagery.
+
+Suggested tools:
+- Figma (export at 2x for retina)
+- Canva (custom dimensions: 1200×630)
+- Vercel OG Image generation (https://vercel.com/docs/functions/og-image-generation)
+
+This file is referenced in app/layout.tsx:
+  openGraph.images[0].url = '/og-image.png'
