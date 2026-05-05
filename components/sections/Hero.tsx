@@ -63,7 +63,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative min-h-screen flex items-center bg-[#F4F6FB] overflow-hidden pt-16 md:pt-20"
+      className="relative bg-[#F4F6FB] overflow-hidden pt-28 md:pt-36 lg:pt-40 pb-20 lg:pb-32"
       aria-label="Hero"
     >
       {/* Ambient background shapes */}
@@ -73,8 +73,8 @@ export default function Hero() {
         <div className="absolute top-1/3 left-1/2 w-[300px] h-[300px] rounded-full bg-gold/3 blur-2xl" />
       </div>
 
-      <div className="relative container-inner py-20 lg:py-32 w-full">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-24 items-center">
+      <div className="relative container-inner w-full">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 xl:gap-16 items-center">
           {/* Left: Copy */}
           <motion.div
             variants={containerVariants}
@@ -82,7 +82,7 @@ export default function Hero() {
             animate="visible"
           >
             {/* Eyebrow tag */}
-            <motion.div variants={itemVariants} className="mb-6">
+            <motion.div variants={itemVariants} className="mb-5">
               <span className="inline-flex items-center gap-2 bg-gold/10 text-gold border border-gold/20 rounded-full px-4 py-1.5 text-sm font-semibold">
                 <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse-slow flex-shrink-0" aria-hidden="true" />
                 Direct Manufacturer &middot; EU Delivery
@@ -92,23 +92,17 @@ export default function Hero() {
             {/* Headline */}
             <motion.h1
               variants={itemVariants}
-              className="text-display-xl font-bold text-navy leading-none mb-6 text-balance"
+              className="text-5xl md:text-6xl xl:text-[4.5rem] font-bold text-navy leading-[1.05] tracking-tight mb-5 text-balance"
             >
-              Precision{' '}
-              <span className="relative inline-block">
-                <span className="relative z-10">Currency Bands</span>
-                <span
-                  className="absolute -bottom-1 left-0 right-0 h-3 bg-gold/20 -skew-x-2"
-                  aria-hidden="true"
-                />
-              </span>{' '}
-              for Banks and Cash Centers
+              Precision Currency Bands
+              <br />
+              <span className="text-navy/90">for Banks &amp; Cash Centers</span>
             </motion.h1>
 
             {/* Subheadline */}
             <motion.p
               variants={itemVariants}
-              className="text-lg lg:text-xl text-gray-500 leading-relaxed mb-9 max-w-xl"
+              className="text-lg lg:text-xl text-gray-500 leading-relaxed mb-7 max-w-xl"
             >
               Custom-printed banknote bands for banks, exchange offices, CIT companies and cash processing centers across Europe.{' '}
               <strong className="text-navy font-semibold">Free samples.</strong>
@@ -117,17 +111,17 @@ export default function Hero() {
             {/* CTAs */}
             <motion.div
               variants={itemVariants}
-              className="flex flex-col sm:flex-row gap-4 mb-12"
+              className="flex flex-col sm:flex-row gap-4 mb-8"
             >
               <Button variant="primary" size="lg" href="#contact">
-                Request Free Samples
+                Request Samples
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <line x1="5" y1="12" x2="19" y2="12" />
                   <polyline points="12 5 19 12 12 19" />
                 </svg>
               </Button>
-              <Button variant="secondary" size="lg" href="#products">
-                View Products
+              <Button variant="secondary" size="lg" href="#contact">
+                Get Pricing
               </Button>
             </motion.div>
 
@@ -147,6 +141,15 @@ export default function Hero() {
                 </motion.div>
               ))}
             </motion.div>
+
+            {/* Supported currencies */}
+            <motion.p
+              variants={itemVariants}
+              className="mt-5 text-xs text-gray-400 font-medium tracking-wide"
+            >
+              <span className="text-gray-500">Supported currencies:</span>{' '}
+              EUR &middot; CZK &middot; UAH &middot; GBP &middot; USD
+            </motion.p>
           </motion.div>
 
           {/* Right: Image */}
@@ -156,7 +159,7 @@ export default function Hero() {
             animate="visible"
             className="relative hidden lg:block"
           >
-            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl shadow-navy/20 ring-1 ring-navy/5">
+            <div className="relative aspect-[5/4] rounded-2xl overflow-hidden shadow-2xl shadow-navy/25 ring-1 ring-navy/5">
               <Image
                 src={heroProductImg}
                 alt="Custom-printed currency bands for banknote bundles"
@@ -165,7 +168,7 @@ export default function Hero() {
                 className="object-cover"
                 sizes="(max-width: 1024px) 0px, 50vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-navy/5 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-navy/10 via-transparent to-gold/5" />
             </div>
 
             {/* Floating stat card */}
@@ -184,20 +187,6 @@ export default function Hero() {
               <div>
                 <div className="text-2xl font-bold text-navy leading-none">10M+</div>
                 <div className="text-xs text-gray-400 font-medium mt-0.5">Annual production capacity</div>
-              </div>
-            </motion.div>
-
-            {/* Floating currency badge */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: prefersReducedMotion ? 0 : 1.1, duration: 0.5 }}
-              className="absolute -top-5 -right-5 bg-gold rounded-xl px-4 py-3 shadow-lg"
-              aria-label="Available for EUR, CZK, and UAH currencies"
-            >
-              <div className="text-navy text-center">
-                <div className="text-sm font-bold leading-none">EUR &bull; CZK</div>
-                <div className="text-xs font-semibold opacity-70 mt-1">UAH &bull; More</div>
               </div>
             </motion.div>
           </motion.div>

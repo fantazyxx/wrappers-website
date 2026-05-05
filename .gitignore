@@ -31,3 +31,8 @@ tsconfig.tsbuildinfo
 # Misc
 .vercel
 *.pem
+
+# Firebase
+.firebase/
+firebase-debug.log
+.firebase/hosting.*.cache

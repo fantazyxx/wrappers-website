@@ -137,17 +137,24 @@ export default function HowItWorks() {
 
             {/* Sample selection visual — fills the natural height gap below steps 05–07.
                 On mobile it flows after the last step, before the CTA. */}
-            <AnimatedSection delay={0.35} className="mt-8">
-              <div className="relative aspect-[16/9] rounded-xl overflow-hidden shadow-md ring-1 ring-navy/5">
-                <Image
-                  src={sampleSelectionImg}
-                  alt="Reviewing currency band samples and color options before approving a production run"
-                  fill
-                  className="object-cover object-center"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  loading="lazy"
-                />
-              </div>
+            <AnimatedSection delay={0.35} className="mt-10">
+              <figure className="relative">
+                <div className="relative aspect-[16/10] rounded-2xl overflow-hidden shadow-xl shadow-navy/15 ring-1 ring-gold/15">
+                  <Image
+                    src={sampleSelectionImg}
+                    alt="Reviewing currency band samples and color options before approving a production run"
+                    fill
+                    className="object-cover object-center"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-navy/15 via-transparent to-gold/5" />
+                </div>
+                <figcaption className="mt-3 flex items-center gap-2 text-xs text-gray-400 font-medium tracking-wide">
+                  <span className="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0" aria-hidden="true" />
+                  Sample inspection &middot; color &amp; finish review before sign-off
+                </figcaption>
+              </figure>
             </AnimatedSection>
           </div>
         </div>
